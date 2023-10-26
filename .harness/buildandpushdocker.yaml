@@ -10,6 +10,7 @@ pipeline:
           name: buidandpush
           identifier: buidandpush
           description: ""
+          spec:
           - step:
               type: BuildAndPushDockerRegistry
               name: Build and push to Docker
