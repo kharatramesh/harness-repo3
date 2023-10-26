@@ -7,10 +7,13 @@ pipeline:
     description:
     stages: ## Contains the stage definitions.
       - stage:
+          name: buidandpush
+          identifier: buidandpush
+          description: ""
           - step:
               type: BuildAndPushDockerRegistry
               name: Build and push to Docker
-              identifier: Build_and_push_to_Docker
+              identifier: buidandpush
               spec:
                 connectorRef: dockerhubregistery
                 repo: kharatramesh/mphasis
