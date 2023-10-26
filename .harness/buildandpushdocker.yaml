@@ -1,0 +1,18 @@
+pipeline:
+    name: buidandpush ## A name for the pipeline.
+    identifier: buidandpush ## A unique Id for the pipeline.
+    projectIdentifier: mphasis1 ## Specify the project this pipeline belongs to.
+    orgIdentifier: default ## Specify the organization this pipeline belongs to.
+    tags: {}
+    description:
+    stages: ## Contains the stage definitions.
+        - stage:
+            - step:
+                type: BuildAndPushDockerRegistry
+                name: Build and push to Docker
+                identifier: Build_and_push_to_Docker
+                spec:
+                  connectorRef: dockerhubregistery
+                  repo: kharatramesh/mphasis
+                  tags:
+                    - <+pipeline.sequenceId>
